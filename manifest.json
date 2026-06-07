@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "1.1.0",
+  "default_locale": "en",
+  "permissions": [
+    "alarms",
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "notifications",
+    "contextMenus"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "action": {
+    "default_title": "__MSG_extName__"
+  },
+  "commands": {
+    "open-mind-map": {
+      "description": "Open site mind map (remarks)"
+    },
+    "open-saved-mindmaps": {
+      "description": "Open saved mind maps list"
+    },
+    "open-local-viewer": {
+      "description": "Open local file reader"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "libs/browser-polyfill.min.js",
+        "shared/page-key.js",
+        "shared/i18n-ui.js",
+        "shared/list-render.js",
+        "shared/floating-shell.js",
+        "shared/panel-app.js",
+        "content/highlight-persist.js",
+        "content/timer-ui.js",
+        "content/side-panel.js",
+        "content/mind-map-tree.js",
+        "content/floating-panels.js",
+        "content/content.js"
+      ],
+      "css": ["content/content.css", "content/floating-panels.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/bell.wav",
+        "assets/bell.mp3",
+        "content/side-panel.css",
+        "libs/pdfjs/pdf.min.mjs",
+        "libs/pdfjs/pdf.worker.min.mjs",
+        "viewer/reader.css"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "timer-translate-notes@local",
+      "strict_min_version": "109.0"
+    }
+  }
+}

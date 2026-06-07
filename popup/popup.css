@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 400px;
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  background: #f8f9fb;
+}
+
+.tabs {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #e2e6ee;
+  padding: 0;
+  margin: 0;
+}
+
+.tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px 4px;
+  cursor: pointer;
+  font-size: 10px;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab.active {
+  color: #2563eb;
+  border-bottom: 2px solid #2563eb;
+  font-weight: 600;
+}
+
+.panel {
+  display: none;
+  padding: 14px;
+}
+
+.panel.active {
+  display: block;
+}
+
+.status {
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 12px;
+}
+
+.countdown {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  margin: 8px 0 14px;
+  color: #111;
+}
+
+.time-inputs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.time-inputs label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: #666;
+}
+
+.time-inputs input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #d0d7e2;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  flex: 1;
+  padding: 8px 6px;
+  border-radius: 6px;
+  border: 1px solid #d0d7e2;
+  background: #fff;
+  cursor: pointer;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.notes-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.notes-toolbar select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7e2;
+}
+
+.notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.note-item {
+  background: #fff;
+  border: 1px solid #e2e6ee;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.note-item .label {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #3730a3;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.note-item .body {
+  margin: 0 0 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.note-item .meta {
+  font-size: 11px;
+  color: #888;
+}
+
+.note-item a.url {
+  color: #2563eb;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.note-item .actions {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+.note-item .actions button {
+  flex: none;
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+}
+
+.empty.hidden {
+  display: none;
+}
+
+#panel-settings label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+#panel-settings select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7e2;
+}
+
+#open-options {
+  color: #2563eb;
+}
+
+.provider-line {
+  font-size: 12px;
+  color: #555;
+  margin: 0 0 8px;
+}
+
+.study-item .study-original {
+  margin: 0 0 4px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.study-item .study-translation {
+  margin: 0 0 6px;
+  color: #444;
+  word-break: break-word;
+}
+
+.study-item .study-remark.remark {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}

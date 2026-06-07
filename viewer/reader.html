@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local reader</title>
+  <link rel="stylesheet" href="reader.css" />
+  <link rel="stylesheet" href="../content/content.css" />
+  <link rel="stylesheet" href="../content/floating-panels.css" />
+</head>
+<body id="wtp-viewer-app" class="wtp-viewer-page">
+  <header class="wtp-viewer-header wtp-viewer-chrome">
+    <h1 data-i18n="viewerTitle">Local file reader</h1>
+    <span id="wtp-viewer-doc-title" class="wtp-viewer-doc-title"></span>
+    <button type="button" id="wtp-btn-pick-file" class="primary" data-i18n-btn="openLocalFile">Open local file</button>
+    <input type="file" id="wtp-file-input" accept=".pdf,.docx,.html,.htm,.txt,application/pdf,text/html,text/plain" hidden />
+  </header>
+  <p id="wtp-viewer-status" class="wtp-viewer-status hidden" role="status"></p>
+  <div class="wtp-viewer-layout">
+    <aside class="wtp-viewer-sidebar wtp-viewer-chrome">
+      <h2 data-i18n="viewerRecent">Recent files</h2>
+      <div id="wtp-viewer-recent-list"></div>
+    </aside>
+    <main class="wtp-viewer-main">
+      <div id="wtp-reader-drop-zone">
+        <p data-i18n="viewerDropHint">Drop a PDF, Word (.docx), HTML, or text file here, or click to choose.</p>
+      </div>
+      <div id="wtp-reader-document" class="hidden"></div>
+    </main>
+  </div>
+
+  <script src="reader-init.js"></script>
+  <script src="../libs/browser-polyfill.min.js"></script>
+  <script src="../shared/page-key.js"></script>
+  <script src="../shared/viewer-storage.js"></script>
+  <script src="../shared/i18n-ui.js"></script>
+  <script src="../shared/list-render.js"></script>
+  <script src="../shared/floating-shell.js"></script>
+  <script src="../shared/panel-app.js"></script>
+  <script src="../content/highlight-persist.js"></script>
+  <script src="../content/timer-ui.js"></script>
+  <script src="../content/side-panel.js"></script>
+  <script src="../content/mind-map-tree.js"></script>
+  <script src="../content/floating-panels.js"></script>
+  <script src="../libs/mammoth/mammoth.browser.min.js"></script>
+  <script src="../content/content.js"></script>
+  <script type="module" src="reader-module.js"></script>
+  <script src="reader-boot.js"></script>
+</body>
+</html>

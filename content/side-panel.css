@@ -1,0 +1,241 @@
+#wtp-side-panel-host {
+  position: fixed !important;
+  top: 12px !important;
+  right: 12px !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 2147483646 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+#wtp-side-panel-host.wtp-host-hidden {
+  display: none !important;
+}
+
+#wtp-side-panel {
+  width: 340px;
+  max-height: calc(100vh - 24px);
+  background: #f8f9fb;
+  border: 1px solid #e2e6ee;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#wtp-side-panel.wtp-hidden {
+  display: none !important;
+}
+
+#wtp-side-panel.wtp-minimized {
+  width: auto;
+  min-width: 140px;
+  max-height: none;
+}
+
+#wtp-side-panel.wtp-minimized .wtp-panel-body {
+  display: none !important;
+}
+
+.wtp-side-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 12px 12px 0 0;
+  flex-shrink: 0;
+}
+
+#wtp-side-panel.wtp-minimized .wtp-side-header {
+  border-radius: 8px;
+}
+
+.wtp-side-title {
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.wtp-btn-minimize {
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  cursor: pointer;
+  font-size: 11px !important;
+  white-space: nowrap;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+}
+
+.wtp-panel-body {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.wtp-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-bottom: 1px solid #e2e6ee;
+  margin: 0;
+  padding: 0;
+}
+
+.wtp-tab {
+  flex: 1;
+  min-width: 0;
+  border: none !important;
+  background: transparent !important;
+  padding: 8px 4px !important;
+  cursor: pointer;
+  font-size: 10px !important;
+  color: #555 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: auto !important;
+  height: auto !important;
+  line-height: normal !important;
+}
+
+.wtp-tab.active {
+  color: #2563eb !important;
+  border-bottom: 2px solid #2563eb !important;
+  font-weight: 600;
+}
+
+.wtp-panel {
+  display: none;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.wtp-panel.active {
+  display: block;
+}
+
+.wtp-status {
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 12px;
+}
+
+.wtp-countdown {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  margin: 8px 0 12px;
+}
+
+.wtp-time-inputs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.wtp-time-inputs label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: #666;
+}
+
+.wtp-time-inputs input,
+.wtp-panel-body select {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #d0d7e2;
+  border-radius: 6px;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+
+.wtp-btn-row {
+  display: flex;
+  gap: 8px;
+}
+
+.wtp-panel-body button {
+  flex: 1;
+  padding: 8px 6px !important;
+  border-radius: 6px !important;
+  border: 1px solid #d0d7e2 !important;
+  background: #fff !important;
+  cursor: pointer;
+  font-size: 11px !important;
+  color: #1a1a1a !important;
+  white-space: nowrap;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.wtp-panel-body button:disabled {
+  opacity: 0.5;
+}
+
+.wtp-primary {
+  background: #2563eb !important;
+  color: #fff !important;
+  border-color: #2563eb !important;
+}
+
+.wtp-notes-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.wtp-notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.wtp-notes-list .note-item {
+  background: #fff;
+  border: 1px solid #e2e6ee;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.wtp-empty {
+  text-align: center;
+  color: #888;
+  padding: 16px;
+}
+
+.wtp-empty.wtp-hidden,
+.wtp-hidden {
+  display: none !important;
+}
+
+.wtp-provider-line {
+  font-size: 12px;
+  color: #555;
+}
+
+#open-options {
+  color: #2563eb;
+}

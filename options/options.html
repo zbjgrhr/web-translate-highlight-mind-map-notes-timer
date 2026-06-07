@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="options.css" />
+  <title>Settings</title>
+</head>
+<body>
+  <h1 data-i18n="optionsTitle">Settings</h1>
+
+  <label>
+    <span data-i18n="uiLanguage">UI language</span>
+    <select id="ui-locale">
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
+  </label>
+
+  <label>
+    <span data-i18n="provider">Provider</span>
+    <select id="provider">
+      <option value="free" data-i18n="providerFree">Free (MyMemory)</option>
+      <option value="libre" data-i18n="providerLibre">LibreTranslate</option>
+      <option value="google" data-i18n="providerGoogle">Google Cloud Translation</option>
+      <option value="deepl" data-i18n="providerDeepL">DeepL</option>
+    </select>
+  </label>
+
+  <p class="hint" data-i18n="freeHint">Free providers are rate-limited.</p>
+
+  <label id="wrap-api-key">
+    <span data-i18n="apiKey">API key</span>
+    <input type="password" id="api-key" autocomplete="off" />
+  </label>
+
+  <label id="wrap-libre-url" class="hidden">
+    <span data-i18n="libreUrl">LibreTranslate server URL</span>
+    <input type="url" id="libre-url" placeholder="https://libretranslate.com" />
+  </label>
+
+  <label class="checkbox" id="wrap-deepl-pro">
+    <input type="checkbox" id="deepl-pro" />
+    <span data-i18n="deeplPro">Use DeepL Pro API URL</span>
+  </label>
+
+  <label>
+    <span data-i18n="targetLanguage">Translation target</span>
+    <select id="target-lang"></select>
+  </label>
+
+  <label>
+    <span data-i18n="sourceLang">Source language (translation)</span>
+    <select id="source-lang">
+      <option value="auto" data-i18n="sourceAuto">Auto-detect</option>
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+    </select>
+  </label>
+
+  <label class="checkbox">
+    <input type="checkbox" id="close-tab-on-expire" />
+    <span data-i18n="closeTabOnExpire">Close tab when timer ends</span>
+  </label>
+
+  <section class="file-access">
+    <h2 data-i18n="optionsFileAccessTitle">Local files (file://)</h2>
+    <p class="hint" data-i18n="optionsFileAccessBody">…</p>
+  </section>
+
+  <section class="shortcuts">
+    <h2 data-i18n="optionsShortcutsTitle">Keyboard shortcuts (mind map panel)</h2>
+    <p class="hint" data-i18n="optionsShortcutsMindMap">Ctrl+S save · …</p>
+    <p class="hint">Extension shortcuts: assign in browser → Manage extension shortcuts (open mind map / saved mind maps).</p>
+  </section>
+
+  <div class="btn-row">
+    <button type="button" id="btn-save" class="primary" data-i18n-btn="save">Save</button>
+    <button type="button" id="btn-test" data-i18n-btn="testTranslate">Test translation</button>
+  </div>
+
+  <p id="status" class="status" role="status"></p>
+
+  <script src="../libs/browser-polyfill.min.js"></script>
+  <script src="../shared/i18n-ui.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

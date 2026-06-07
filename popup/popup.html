@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="tabs">
+    <button type="button" class="tab active" data-tab="timer" data-i18n-btn="tabTimer">Timer</button>
+    <button type="button" class="tab" data-tab="notes" data-i18n-btn="tabNotes">Notes</button>
+    <button type="button" class="tab" data-tab="vocab" data-i18n-btn="tabVocab">Vocab</button>
+    <button type="button" class="tab" data-tab="sentences" data-i18n-btn="tabSentences">Sentences</button>
+    <button type="button" class="tab" data-tab="settings" data-i18n-btn="tabSettings">Settings</button>
+  </header>
+
+  <section id="panel-timer" class="panel active">
+    <p id="timer-status" class="status" data-i18n="timerIdle">Set a duration and press Start</p>
+    <div class="countdown" id="countdown">00:00:00</div>
+    <div class="time-inputs">
+      <label><span data-i18n="hours">Hours</span><input type="number" id="hours" min="0" max="99" value="0" /></label>
+      <label><span data-i18n="minutes">Minutes</span><input type="number" id="minutes" min="0" max="59" value="5" /></label>
+      <label><span data-i18n="seconds">Seconds</span><input type="number" id="seconds" min="0" max="59" value="0" /></label>
+    </div>
+    <div class="btn-row">
+      <button type="button" id="btn-start" class="primary" data-i18n-btn="start">Start</button>
+      <button type="button" id="btn-pause" disabled data-i18n-btn="pause">Pause</button>
+      <button type="button" id="btn-reset" data-i18n-btn="reset">Reset</button>
+    </div>
+  </section>
+
+  <section id="panel-notes" class="panel">
+    <div class="notes-toolbar">
+      <button type="button" id="btn-add-note" class="primary" data-i18n-btn="addNoteOnPage">Add note on this page</button>
+      <select id="label-filter">
+        <option value="" data-i18n="allLabels">All labels</option>
+      </select>
+    </div>
+    <ul id="notes-list" class="notes-list"></ul>
+    <p id="notes-empty" class="empty hidden" data-i18n="noNotes">No notes yet</p>
+  </section>
+
+  <section id="panel-vocab" class="panel">
+    <div class="notes-toolbar">
+      <select id="vocab-label-filter">
+        <option value="" data-i18n="allLabels">All labels</option>
+      </select>
+    </div>
+    <ul id="vocab-list" class="notes-list study-list"></ul>
+    <p id="vocab-empty" class="empty hidden" data-i18n="noVocab">No vocabulary yet</p>
+  </section>
+
+  <section id="panel-sentences" class="panel">
+    <div class="notes-toolbar">
+      <select id="sentence-label-filter">
+        <option value="" data-i18n="allLabels">All labels</option>
+      </select>
+    </div>
+    <ul id="sentence-list" class="notes-list study-list"></ul>
+    <p id="sentence-empty" class="empty hidden" data-i18n="noSentences">No sentences yet</p>
+  </section>
+
+  <section id="panel-settings" class="panel">
+    <div class="btn-row" style="margin-bottom:12px">
+      <button type="button" id="btn-open-viewer" class="primary" data-i18n-btn="openLocalFile">Open local file</button>
+      <button type="button" id="btn-open-viewer-last" data-i18n-btn="openLocalViewer">Open file reader</button>
+    </div>
+    <label>
+      <span data-i18n="uiLanguage">UI language</span>
+      <select id="ui-locale">
+        <option value="en">English</option>
+        <option value="zh">中文</option>
+      </select>
+    </label>
+    <label>
+      <span data-i18n="targetLanguage">Translation target</span>
+      <select id="target-lang"></select>
+    </label>
+    <p id="provider-display" class="provider-line"></p>
+    <p><a href="#" id="open-options" data-i18n="openOptions">Translation API settings</a></p>
+  </section>
+
+  <script src="../libs/browser-polyfill.min.js"></script>
+  <script src="../shared/i18n-ui.js"></script>
+  <script src="../shared/panel-app.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
